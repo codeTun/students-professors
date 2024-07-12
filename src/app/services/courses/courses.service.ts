@@ -30,7 +30,7 @@ export class CoursesService {
     }
   }
 
-  async getCourseById(id: number): Promise<any> {
+  async getCourseById(id: Course): Promise<any> {
     try {
       const response = await fetch(`${this.baseUrl}/${id}`);
       if (!response.ok) {
@@ -62,7 +62,7 @@ export class CoursesService {
     }
   }
 
-  async updateCourse(id: number, courseDetails: Course): Promise<any> {
+  async updateCourse(id: Course, courseDetails: Course): Promise<any> {
     try {
       const response = await fetch(`${this.baseUrl}/${id}`, {
         method: 'PUT',
@@ -81,7 +81,7 @@ export class CoursesService {
     }
   }
 
-  async deleteCourse(id: number): Promise<boolean> {
+  async deleteCourse(id: Course): Promise<boolean> {
     try {
       const response = await fetch(`${this.baseUrl}/${id}`, {
         method: 'DELETE',
